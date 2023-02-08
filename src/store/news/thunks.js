@@ -1,4 +1,4 @@
-import { addTodo } from "./";
+import { addTodo } from ".";
 
 export const starNewTodo = (todo) => {
   return (dispatch, getState) => {

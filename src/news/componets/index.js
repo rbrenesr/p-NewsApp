@@ -1,0 +1,6 @@
+export * from './HeaderComp'
+export * from './JumbotronComp'
+export * from './FooterComp'
+export * from './MainComp'
+export * from './NewsList'
+export * from './ContainerComp'

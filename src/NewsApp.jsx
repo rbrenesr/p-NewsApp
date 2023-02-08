@@ -1,6 +1,17 @@
+import {
+  HeaderComp,
+  ContainerComp,
+  MainComp,
+  FooterComp,
+} from "./news/componets";
 
 export const NewsApp = () => {
   return (
-    <div>NewsApp</div>
-  )
-}
+    <>
+      <HeaderComp />
+      <ContainerComp />
+      {/* <MainComp/> */}
+      <FooterComp />
+    </>
+  );
+};
