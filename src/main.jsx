@@ -1,10 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { NewsApp } from './NewsApp'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import "./index.css";
+import { NewsApp } from "./NewsApp";
+import { store } from "./store/store";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <NewsApp/>
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <NewsApp />
+    </Provider>
+  </React.StrictMode>
+);

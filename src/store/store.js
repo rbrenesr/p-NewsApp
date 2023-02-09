@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { todoSlice } from "./Todo";
+import { newsSlice } from "./news";
 
 
 export const store = configureStore({
     reducer: {
-        todo: todoSlice.reducer
+        news: newsSlice.reducer
     }
 })

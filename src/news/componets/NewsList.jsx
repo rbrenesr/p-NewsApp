@@ -1,100 +1,33 @@
+import { useDispatch, useSelector } from "react-redux";
+import { startGetArticlesBySearch } from "../../store/news/thunks";
+
 export const NewsList = () => {
+  const dispatch = useDispatch();
+  const { articles } = useSelector((state) => state.news);
+
+  dispatch(startGetArticlesBySearch());
+
   return (
     <>
-      <div className="row mb-2">
-        <div className="col-md-6">
-          <div className="card flex-md-row mb-4 box-shadow h-md-250">
-            <div className="card-body d-flex flex-column align-items-start">
-              <strong className="d-inline-block mb-2 text-primary">
-                Author
-              </strong>
-              <h3 className="mb-0">
-                <a className="text-dark" href="#">
-                  Title
-                </a>
-              </h3>
-              <div className="mb-1 text-muted">PublishedAt</div>
-              <p className="card-text mb-auto">Description</p>
-              <a href="#">Continue reading</a>
-            </div>
+      <div className="row mb-2 d-flex justify-content-center">
+        {articles.map((article) => (
+          <div
+            key={new Date().getTime() + article.author}
+            className="card m-3"
+            style={{ width: "18rem" }}
+          >
             <img
-              className="card-img-right flex-auto d-none d-md-block"
-              data-src="urlToImage"
-              alt="New image"
+              src={article.urlToImage}
+              className="card-img-top"
+              alt={article.url}
             />
-          </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="card flex-md-row mb-4 box-shadow h-md-250">
-            <div className="card-body d-flex flex-column align-items-start">
-              <strong className="d-inline-block mb-2 text-primary">
-                Author
-              </strong>
-              <h3 className="mb-0">
-                <a className="text-dark" href="#">
-                  Title
-                </a>
-              </h3>
-              <div className="mb-1 text-muted">PublishedAt</div>
-              <p className="card-text mb-auto">Description</p>
-              <a href="#">Continue reading</a>
+            <div className="card-body">
+              <h5 className="card-title">{article.title}</h5>
+              <p className="card-text">{article.description}</p>
+              <a href="#">Leer más...</a>
             </div>
-            <img
-              className="card-img-right flex-auto d-none d-md-block"
-              data-src="urlToImage"
-              alt="New image"
-            />
           </div>
-        </div>
-      </div>
-
-      <div className="row mb-2">
-        <div className="col-md-6">
-          <div className="card flex-md-row mb-4 box-shadow h-md-250">
-            <div className="card-body d-flex flex-column align-items-start">
-              <strong className="d-inline-block mb-2 text-primary">
-                Author
-              </strong>
-              <h3 className="mb-0">
-                <a className="text-dark" href="#">
-                  Title
-                </a>
-              </h3>
-              <div className="mb-1 text-muted">PublishedAt</div>
-              <p className="card-text mb-auto">Description</p>
-              <a href="#">Continue reading</a>
-            </div>
-            <img
-              className="card-img-right flex-auto d-none d-md-block"
-              data-src="urlToImage"
-              alt="New image"
-            />
-          </div>
-        </div>
-
-        <div className="col-md-6">
-          <div className="card flex-md-row mb-4 box-shadow h-md-250">
-            <div className="card-body d-flex flex-column align-items-start">
-              <strong className="d-inline-block mb-2 text-primary">
-                Author
-              </strong>
-              <h3 className="mb-0">
-                <a className="text-dark" href="#">
-                  Title
-                </a>
-              </h3>
-              <div className="mb-1 text-muted">PublishedAt</div>
-              <p className="card-text mb-auto">Description</p>
-              <a href="#">Continue reading</a>
-            </div>
-            <img
-              className="card-img-right flex-auto d-none d-md-block"
-              data-src="urlToImage"
-              alt="New image"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </>
   );
