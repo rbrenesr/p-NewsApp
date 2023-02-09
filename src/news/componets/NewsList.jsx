@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { startGetArticlesBySearch } from "../../store/news/thunks";
 
@@ -5,8 +6,12 @@ export const NewsList = () => {
   const dispatch = useDispatch();
   const { articles } = useSelector((state) => state.news);
 
-  dispatch(startGetArticlesBySearch());
+  useEffect(() => {
+    dispatch(startGetArticlesBySearch());
+  }, [articles])
 
+ 
+  
   return (
     <>
       <div className="row mb-2 d-flex justify-content-center">
