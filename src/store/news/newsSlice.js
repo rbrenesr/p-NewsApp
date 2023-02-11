@@ -4,17 +4,30 @@ export const newsSlice = createSlice({
    name: 'news',
 
    initialState: {
-      articles: []
+      articles: [],
+      activeArticle:{},
+      // activeArticle:{
+      //    'author':'',
+      //    'title':'',
+      //    'description': '',
+      //    'urlToImage': '',
+      //    'publishedA': '',
+      //    'content': ''
+      // }
    },
    reducers: {
       getNews: (state,  action  ) => {       
          state.articles = action.payload;
       },
+      setActiveNew: ( state, action ) => {         
+         state.activeArticle = action.payload;
+      },
+      
    }
 });
 
 // Action creators are generated for each case reducer function
-export const { getNews } = newsSlice.actions;
+export const { getNews, setActiveNew } = newsSlice.actions;
 
 
 

@@ -1,7 +1,13 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { setActiveNew } from "../../store/news/newsSlice";
 
 export const NewItem = ({ article }) => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onRead = () => {
+    dispatch(setActiveNew(article));
+  };
 
   return (
     <div className="card m-3" style={{ width: "18rem" }}>
@@ -13,7 +19,9 @@ export const NewItem = ({ article }) => {
       <div className="card-body">
         <h5 className="card-title">{article.title}</h5>
         <p className="card-text">{article.description}</p>
-        <Link to={`new/${article.title}`}>Más..</Link>
+        <Link to={"/new"} onClick={onRead}>
+          Más..
+        </Link>
       </div>
     </div>
   );
