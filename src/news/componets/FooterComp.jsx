@@ -1,10 +1,11 @@
 export const FooterComp = () => {
   return (
     <footer className="blog-footer">
+      <p>Las noticias acá desplegadas, son gracias a https://newsapi.org/ </p>
       <p>
-        Blog template built for{" "}
-        <a href="https://getbootstrap.com/">Bootstrap</a> by{" "}
-        <a href="https://twitter.com/mdo">@mdo</a>.
+        Sitio de noticias mundiales construido por {" "}
+        <a href="https://github.com/rbrenesr" target="_blanck" >rbrenesr</a>
+        
       </p>
       <p>
         <a href="#">Back to top</a>

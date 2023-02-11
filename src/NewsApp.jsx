@@ -9,8 +9,7 @@ export const NewsApp = () => {
   return (
     <>
       <HeaderComp />
-      <ContainerComp />
-      {/* <MainComp/> */}
+      <ContainerComp />      
       <FooterComp />
     </>
   );

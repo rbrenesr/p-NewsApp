@@ -12,11 +12,6 @@ export const JumbotronComp = () => {
           soluciones desde cero a paradigmas complejos a base de un pensamiento
           estructurado, lógico y creativo.
         </p>
-        <p className="lead mb-0">
-          <a href="#" className="text-white font-weight-bold">
-            Continue reading...
-          </a>
-        </p>
       </div>
     </div>
   );
